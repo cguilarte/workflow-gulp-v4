@@ -1,6 +1,6 @@
 {
   "name": "gulpstructure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Estructura base para el desarrollo del Frontend optimizado",
   "main": "index.js",
   "dependencies": {

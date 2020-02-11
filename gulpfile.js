@@ -106,6 +106,11 @@ gulp.watch(config.pathSass + '*.scss').on('change', function(){
     browserSync.reload;
 });
 
+gulp.watch(config.pathJs + '*.js').on('change', function(){
+    javascript();
+    browserSync.reload;
+});
+
 }
 
 //Task Default
