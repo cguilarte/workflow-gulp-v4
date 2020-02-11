@@ -1,4 +1,4 @@
-# workflow-gulp-v4
+## workflow-gulp-v4
 
 1. Primero instalamos los paquetes que estan en el package.json : 
 ```
@@ -9,7 +9,7 @@ npm install**
 gulp
 ```
 
-# Opciones
+## Opciones
 En las opciones podemos modificar el host y puerto por defecto de arranque.
 1. Cambiando el host default:
 ```
@@ -20,7 +20,7 @@ gulp --host=http://localhost
 gulp --port=3002
 ```
 
-# Extra
+## Extra
 1. Si queremos optimizar las imagenes deberemos ejecutar: 
 ```
 gulp images
