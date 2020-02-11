@@ -1,4 +1,6 @@
 @import 'reboot';
+@import 'variables';
+@import 'mixin';
 
 body{
     height: 100vh;
@@ -16,4 +18,11 @@ h2 {
 p {
     color: #757575;
     font-size: 18px;
+}
+
+.col{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
 }

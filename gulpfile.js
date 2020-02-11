@@ -16,6 +16,10 @@ const path = require( 'path' );
 const criticalcss = require("criticalcss");
 const fs = require('fs');
 const tmpDir = require('os').tmpdir();
+const concat = require('gulp-concat');
+const argv = require('yargs').argv;
+const port = argv.port === undefined ? 3000 : argv.port;
+const host = argv.host === undefined ? 'http://localhost' : argv.host;
 
 //Configurations default
 const config = {
@@ -23,14 +27,14 @@ const config = {
     pathJs: './static/js/',
     pathSass: './static/sass/',
     pathImg: './static/img/',
-    serverHost: 'http://localhost:3001',
+    serverHost: host +':'+ port,
     fileCss: 'app.css',
     fileSass: 'app.scss',
     serverRun : this.serverHost
 }
  
 function cssCritical() {
-    console.log('critical');
+    console.log('running critical');
     let cssUrl = config.serverHost +'/'+ config.pathCss + config.fileCss;
     let cssPath = path.join( tmpDir, config.fileCss );
    
@@ -51,8 +55,8 @@ function cssCritical() {
     });
 }
 
-function css(){
-    console.log('run sass');
+function css() {
+    console.log('running sass');
     const processors = [ autoprefixer, cssnext, precss ];
     return gulp.src(config.pathSass + config.fileSass)
         .pipe(plumber())
@@ -67,7 +71,7 @@ function css(){
 }
 
 function images() {
-    console.log('run imagen');
+    console.log('running imagen');
     gulp.src(config.pathImg + '**/*')
         .pipe(plumber())
         .pipe(imagemin())
@@ -75,20 +79,22 @@ function images() {
 }
 
 function javascript() {
-    console.log('run javascripts');
-    gulp.src(config.pathJs + '*.js')
+    console.log('running javascripts');
+    //Colocar los archivos .js en orden de ejecución.
+    gulp.src([config.pathJs + 'app.js'])
         .pipe(plumber())
         .pipe(babel({       
             "presets": ["env"],
             "plugins": ["transform-remove-strict-mode"]
          }))
         .pipe(uglify())
+        .pipe(concat('build.js', {newLine: ';'}))
         .pipe(gulp.dest(config.pathJs + 'dist'))
         .pipe(browserSync.stream());
 }
 
 function html() {
-    console.log('run html');
+    console.log('running html');
     gulp.src('**/*.html')
     .pipe(plumber())
     .pipe(gulp.dest('./'));
@@ -96,6 +102,7 @@ function html() {
 
 function watch() {
     browserSync.init({
+        port: port,
         server: {
             baseDir: "./"
         }
