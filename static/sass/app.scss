@@ -1,28 +1,14 @@
 @import 'reboot';
+@import 'fonts';
 @import 'variables';
 @import 'mixin';
-
-body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-h2 {
-    color:green;
-    font-size: 56px;
-    margin: 0;
-    text-align: center;
-}
-p {
-    color: #757575;
-    font-size: 18px;
-}
-
-.col{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: rgba(86, 61, 124, .15);
-    border: 1px solid rgba(86, 61, 124, .2);
-}
+@import 'base';
+@import 'grid';
+@import 'hero';
+@import 'pasos';
+@import 'beneficios';
+@import 'activacion';
+@import 'contacto';
+@import 'footer';
+@import 'legales';
+@import 'modal';

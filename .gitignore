@@ -1,3 +1,7 @@
 node_modules
-
+main.scss
+static/sass/*
+package.json
+package-lock.json
+gulpfile.js
 .DS_Store

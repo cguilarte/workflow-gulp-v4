@@ -81,7 +81,7 @@ function images() {
 function javascript() {
     console.log('running javascripts');
     //Colocar los archivos .js en orden de ejecución.
-    gulp.src([config.pathJs + 'app.js'])
+    gulp.src([config.pathJs + 'base.js', config.pathJs + 'slider.js',  config.pathJs + 'app.js'])
         .pipe(plumber())
         .pipe(babel({       
             "presets": ["env"],
@@ -102,9 +102,14 @@ function html() {
 
 function watch() {
     browserSync.init({
+        cors: true,
         port: port,
         server: {
-            baseDir: "./"
+            baseDir: "./",
+            middleware: function (req, res, next) {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                next();
+            }
         }
     });
 
