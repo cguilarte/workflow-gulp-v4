@@ -1,26 +1,18 @@
 // Media Query
-$breakpoint-xl: 1440px; // Extra large devices (large desktops, 1440px and up)
-$breakpoint-xls: 1280px; // Extra large devices (large desktops, 1280px and up)
-$breakpoint-xlsx: 1024px; // Extra large devices (large desktops, 1024px and up)
-$breakpoint-lg: 960px;  // Large devices (tablet, 960px and up)
-$breakpoint-md: 728px;  // Medium devices (tablets, 768px and up)
-$breakpoint-sm: 360px;  // Small devices (landscape phones, 360px and up)
-
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 960px;
+$breakpoint-md: 720px;
+$breakpoint-sm: 540px;
 
 $breakpoint-gutter: 20px;
-$standard_margin: 20px;
-$breakpoint-container: 1134px;
 
 // Style texto
 
 $font-family:               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-size-base:            1rem !default; // Assumes the browser default, typically `16px`
-$light:                     200 !default;
-$book:                      300 !default;
-$medium:                    400 !default;
-$bold:                      600 !default;
-$extra_bold:                700 !default;
-
+$font-weight-light:         300 !default;
+$font-weight-normal:        400 !default;
+$font-weight-bold:          700 !default;
 
 $h1-font-size:              $font-size-base * 2.5 !default;
 $h2-font-size:              $font-size-base * 2 !default;
@@ -37,9 +29,3 @@ $zindex-modal-backdrop:    1040 !default;
 $zindex-modal:             1050 !default;
 $zindex-popover:           1060 !default;
 $zindex-tooltip:           1070 !default;
-
-
-$colors_main_red: #C4161C;
-$colors_black: #000000;
-$colors_white: #ffffff;
-$colors_font_light: #969495;
